@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kalkulator Suhu</title>
+    <link rel="stylesheet" href="css/styles.css"
+    <script type="text/javascript">
+        function convertCtoF() {
+            var celsius = document.getElementById("celsius").value;
+            var fahrenheit = (celsius * 9/5) + 32;
+            document.getElementById("result").value = fahrenheit.toFixed(2);
+            document.getElementById("formula").value = celsius + "°C × 9/5 + 32 = " + fahrenheit.toFixed(2) + "°F";
+        }
+
+        function refreshPage() {
+            document.getElementById("celsius").value = "";
+            document.getElementById("result").value = "";
+            document.getElementById("formula").value = "";
+        }
+
+        function reverseConversion() {
+            var fahrenheit = document.getElementById("result").value;
+            var celsius = (fahrenheit - 32) * 5/9;
+            document.getElementById("celsius").value = celsius.toFixed(2);
+            document.getElementById("formula").value = fahrenheit + "°F - 32 × 5/9 = " + celsius.toFixed(2) + "°C";
+        }
+    </script>
+</head>
+<body>
+    <h1>Kalkulator Suhu (Celcius ke Farenheit)</h1>
+    <label for="celsius">Celsius:</label>
+    <input type="number" id="celsius" name="celsius"><br><br>
+
+    <button onclick="convertCtoF()">Result</button>
+    <button onclick="refreshPage()">Refresh</button>
+    <button onclick="reverseConversion()">Reverse</button><br><br>
+
+    <label for="result">Fahrenheit:</label>
+    <input type="text" id="result" name="result" readonly><br><br>
+
+    <label for="formula">Rumus:</label><br>
+    <textarea id="formula" name="formula" rows="2" cols="50" readonly></textarea>
+</body>
+</html>
