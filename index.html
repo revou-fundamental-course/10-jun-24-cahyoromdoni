@@ -1,43 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Kalkulator Suhu</title>
-    <link rel="stylesheet" href="css/styles.css"
-    <script type="text/javascript">
-        function convertCtoF() {
-            var celsius = document.getElementById("celsius").value;
-            var fahrenheit = (celsius * 9/5) + 32;
-            document.getElementById("result").value = fahrenheit.toFixed(2);
-            document.getElementById("formula").value = celsius + "°C × 9/5 + 32 = " + fahrenheit.toFixed(2) + "°F";
-        }
-
-        function refreshPage() {
-            document.getElementById("celsius").value = "";
-            document.getElementById("result").value = "";
-            document.getElementById("formula").value = "";
-        }
-
-        function reverseConversion() {
-            var fahrenheit = document.getElementById("result").value;
-            var celsius = (fahrenheit - 32) * 5/9;
-            document.getElementById("celsius").value = celsius.toFixed(2);
-            document.getElementById("formula").value = fahrenheit + "°F - 32 × 5/9 = " + celsius.toFixed(2) + "°C";
-        }
-    </script>
+    <title>Cahyo Website</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js"></script>
 </head>
 <body>
-    <h1>Kalkulator Suhu (Celcius ke Farenheit)</h1>
-    <label for="celsius">Celsius:</label>
-    <input type="number" id="celsius" name="celsius"><br><br>
+    <h1>Website Konversi Suhu</h1>
+    <main>
+        <h2> Masukkan suhu derajat Celcius (&deg;C) ke kotak dibawah, lalu klik tombol Konversi
+            untuk mendapatkan hasil konversi dalam bentuk Farenheit (&deg;F)
+        </h2>
+    </main>
+    <section>
+        <header>
+            <h3>Celsius (&deg;C) :
+            </h3>
+        </header>
+    </section>
+    <input type="number" id="celsius" name="celsius"><br>
 
-    <button onclick="convertCtoF()">Result</button>
-    <button onclick="refreshPage()">Refresh</button>
+
+    <button onclick="convertCtoF()">Konversi</button>
+    <button onclick="refreshPage()">Reset</button>
     <button onclick="reverseConversion()">Reverse</button><br><br>
 
-    <label for="result">Fahrenheit:</label>
-    <input type="text" id="result" name="result" readonly><br><br>
+    <section>
+        <header>
+            <h4>Farenheit (&deg;F) :
+            </h4>
+        </header>
+    </section>
+    <input type="text" id="result" name="result" readonly><br>
 
-    <label for="formula">Rumus:</label><br>
+    <section>
+        <header>
+            <h5>Cara Kalkulasi :
+            </h5>
+        </header>
+    </section>
     <textarea id="formula" name="formula" rows="2" cols="50" readonly></textarea>
+    <hr/>
+    <p>Farenheit ke Celsius</p>
+    <h6> Cara Konversi Dari Celsius (&deg;C) ke Farenheit (&deg;F)</h6>
+    <p> Suhu <span>S</span> dalam derajat Frenheit (&deg;F) sama dengan suhu <span>S</span> dalam derajat Celsius (&deg;C) kali 9/5 tambah 32.</p>
+    <p> <span>S</span> (&deg;F) = (<span>S</span>(&deg;C) * 9/5) + 32</p>
+    Atau
+    <p> <span>S</span> (&deg;F) = (<span>S</span>(&deg;C) * 1.8) + 32</p>
 </body>
 </html>
